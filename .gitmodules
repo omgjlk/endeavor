@@ -1,3 +1,0 @@
-[submodule "src/pystrava"]
-	path = src/pystrava
-	url = git://github.com/j2sol/pystrava.git
