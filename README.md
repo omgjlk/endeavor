@@ -6,9 +6,4 @@ stravacmd is a Python command line tool for interfacing with
 [pystrava](https://github.com/j2sol/pystrava) to communicate with the Strava
 API.
 
-For your convenience pystrava is setup as a submodule of this checkout. You can
-get it via running:
-
-    git submodule init
-    git submodule update
-
+To run directly from a checkout, clone pystrava in another directory and link pystrava/src/pystrava to src/pystrava within stravacmd.
