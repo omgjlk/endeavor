@@ -13,46 +13,46 @@ Usage
 
 stravacmd has a help output and help output for each target:
 
-$ ./stravacmd --help
-usage: stravacmd [-h] [-v] [-q] {rides} ...
+	$ ./stravacmd --help
+	usage: stravacmd [-h] [-v] [-q] {rides} ...
 
-optional arguments:
-  -h, --help  show this help message and exit
-  -v          verbose
-  -q          show no extra output
+	optional arguments:
+	  -h, --help  show this help message and exit
+	  -v          verbose
+	  -q          show no extra output
 
-Targets:
-  Valid commands
+	Targets:
+	  Valid commands
 
-  {rides}
-    rides     Work with Strava rides
+	  {rides}
+	    rides     Work with Strava rides
 
-$ ./stravacmd rides --help
-usage: stravacmd rides [-h] --athlete ATHLETE [--club CLUBID]
-                       [--startdate STARTDATE] [--enddate ENDDATE]
-                       [--start STARTID]
+	$ ./stravacmd rides --help
+	usage: stravacmd rides [-h] --athlete ATHLETE [--club CLUBID]
+			       [--startdate STARTDATE] [--enddate ENDDATE]
+			       [--start STARTID]
 
-Display strava rides
+	Display strava rides
 
-optional arguments:
-  -h, --help            show this help message and exit
-  --athlete ATHLETE     List rides for a particular athlete
-  --club CLUBID         List rides for a particular club
-  --startdate STARTDATE
-                        List rides starting from YYYY-MM-DD
-  --enddate ENDDATE     List rides until YYYY-MM-DD
-  --start STARTID       List rides newer than (including) this ride number
+	optional arguments:
+	  -h, --help            show this help message and exit
+	  --athlete ATHLETE     List rides for a particular athlete
+	  --club CLUBID         List rides for a particular club
+	  --startdate STARTDATE
+				List rides starting from YYYY-MM-DD
+	  --enddate ENDDATE     List rides until YYYY-MM-DD
+	  --start STARTID       List rides newer than (including) this ride number
 
 Examples
 =====
 
-$ ./stravacmd rides --athlete 279921 --enddate 2011-11-27
-4232472 11/20/2011 Parkland, WA
-4232479 11/13/2011 Seattle, WA
-4232476 11/06/2011 Lakewood, WA
-4232478 11/04/2011 Tacoma, WA
-4232480 09/19/2011 Tacoma, WA
+	$ ./stravacmd rides --athlete 279921 --enddate 2011-11-27
+	4232472 11/20/2011 Parkland, WA
+	4232479 11/13/2011 Seattle, WA
+	4232476 11/06/2011 Lakewood, WA
+	4232478 11/04/2011 Tacoma, WA
+	4232480 09/19/2011 Tacoma, WA
 
-$ ./stravacmd rides --athlete 279921 --startdate 2013-02-10 --enddate 2013-02-14
-41019628 Dash Point BP
-40786069 School + coffee shop
+	$ ./stravacmd rides --athlete 279921 --startdate 2013-02-10 --enddate 2013-02-14
+	41019628 Dash Point BP
+	40786069 School + coffee shop
