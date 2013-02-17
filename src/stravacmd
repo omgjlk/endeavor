@@ -27,6 +27,7 @@ import pystrava
 import argparse
 import logging
 import sys
+import os
 
 log = pystrava.log.log
 
@@ -45,7 +46,21 @@ def rides_worker(args):
     argdict = build_arg_dict(availargs, args)
     rides = athlete.get_all_rides(**argdict)
     for ride in rides:
-        print('%(id)s %(name)s' % ride)
+        if not args.backup:
+            print('%s %s' % (ride.id, ride.name))
+        else:
+            # Do the backup!
+            outdir = os.path.abspath(args.backup)
+            if not os.path.exists(outdir):
+                os.makedirs(outdir)
+            # see if we've already backed up this ride
+            filepath = os.path.join(outdir, '%s.tcx' % ride.id)
+            if os.path.exists(filepath):
+                log.debug('Skipping already backed up ride %s' % ride.id)
+                continue
+            # Write it out
+            ride.tcx.write(filepath)
+            log.info('Wrote %s' % filepath)
 
 def main():
     # Build up an argument parser
@@ -72,6 +87,10 @@ def main():
     rides_parser.add_argument('--start', dest='startId',
                               help='List rides newer than (including) \
                               this ride number')
+    rides_parser.add_argument('--backup',
+                              help='Backup the rides found to the path \
+                              provided.  Ride file names will be <id>.tcx \
+                              and existing rides will not be overwritten.')
     rides_parser.set_defaults(command=rides_worker)
 
     # Parse the args
