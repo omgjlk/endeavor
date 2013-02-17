@@ -20,16 +20,16 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #
-# stravacmd -- a python command line tool for interfacing with Strava
+# endeavor -- a python command line tool for interfacing with Strava
 #
 
-import pystrava
+import pyendeavor
 import argparse
 import logging
 import sys
 import os
 
-log = pystrava.log.log
+log = pyendeavor.log.log
 
 def build_arg_dict(avail, args):
     # This is kind of unncessary magic that saves me from typing
@@ -41,7 +41,7 @@ def build_arg_dict(avail, args):
 
 def rides_worker(args):
     # Create an athlete object out of the ID we got
-    athlete = pystrava.athlete.StravaAthlete(args.athlete)
+    athlete = pyendeavor.athlete.StravaAthlete(args.athlete)
     availargs = ['clubId', 'startDate', 'endDate', 'startId']
     argdict = build_arg_dict(availargs, args)
     rides = athlete.get_all_rides(**argdict)
