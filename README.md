@@ -8,6 +8,8 @@ API.
 
 To run directly from a checkout, clone pystrava in another directory and link pystrava/src/pyendeavor to src/pyendeavor within endeavor.
 
+![Motivated by Strava](http://d26ifou2tyrp3u.cloudfront.net/assets/developers/Red_NoBg-87232fd6081c959c6f13041a84040a28.png)
+
 Usage
 =====
 
